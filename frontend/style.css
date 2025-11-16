@@ -1,0 +1,325 @@
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 10px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+/* Auth Section */
+#auth-section {
+    max-width: 400px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
+}
+
+#login-tab, #signup-tab {
+    display: inline-block;
+    padding: 12px 24px;
+    cursor: pointer;
+    background: #f8f9fa;
+    border-radius: 8px 8px 0 0;
+    margin-right: 5px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+#login-tab.active, #signup-tab.active {
+    background: #007bff;
+    color: white;
+    transform: translateY(-2px);
+}
+
+form {
+    margin: 20px 0;
+}
+
+input,
+select,
+button {
+    margin: 8px 0;
+    padding: 12px;
+    width: 100%;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+}
+
+button {
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+button:hover {
+    background: #0056b3;
+    transform: translateY(-1px);
+}
+
+/* Dashboard */
+#app {
+    max-width: 800px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+#app h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2em;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+#transaction-form {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr auto;
+    gap: 10px;
+    margin-bottom: 20px;
+    align-items: end;
+}
+
+#transaction-form input,
+#transaction-form select,
+#transaction-form button {
+    margin: 0;
+}
+
+#transaction-form button {
+    padding: 12px 20px;
+    background: #28a745;
+}
+
+#transaction-form button:hover {
+    background: #218838;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+li {
+    padding: 12px;
+    margin: 5px 0;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+li:hover {
+    transform: translateX(5px);
+}
+
+li.credit {
+    background: #d4edda;
+    border-left: 4px solid #28a745;
+    color: #155724;
+}
+
+li.debit {
+    background: #f8d7da;
+    border-left: 4px solid #dc3545;
+    color: #721c24;
+}
+
+.summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+}
+
+.summary p {
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.summary p:nth-child(1) { color: #28a745; }
+.summary p:nth-child(2) { color: #dc3545; }
+.summary p:nth-child(3) { color: #007bff; }
+
+canvas {
+    margin: 20px auto;
+    display: block;
+    max-width: 100%;
+    height: auto !important;
+}
+
+.actions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.actions button {
+    padding: 12px;
+    font-size: 14px;
+    background: #6c757d;
+}
+
+.actions button:hover {
+    background: #5a6268;
+}
+
+#download { background: #17a2b8; }
+#download:hover { background: #138496; }
+
+#emailBtn { background: #dc3545; }
+#emailBtn:hover { background: #c82333; }
+
+#whatsappBtn { background: #25d366; }
+#whatsappBtn:hover { background: #1da851; }
+
+#resetBtn { background: #ffc107; color: #212529; }
+#resetBtn:hover { background: #e0a800; }
+
+/* Modal */
+#salary-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#salary-modal .modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    text-align: center;
+    max-width: 90%;
+    width: 400px;
+}
+
+#salary-modal h3 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#salary-modal input {
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+#salary-modal button {
+    margin-top: 15px;
+    padding: 12px 30px;
+    background: #28a745;
+}
+
+#salary-modal button:hover {
+    background: #218838;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 5px;
+    }
+
+    #auth-section {
+        margin: 10px auto;
+        padding: 15px;
+    }
+
+    #app {
+        margin: 10px auto;
+        padding: 15px;
+    }
+
+    #app h2 {
+        font-size: 1.5em;
+    }
+
+    #transaction-form {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .summary {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .actions {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    ul {
+        max-height: 200px;
+    }
+
+    li {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    #transaction-form {
+        grid-template-columns: 1fr;
+    }
+
+    .actions {
+        grid-template-columns: 1fr;
+    }
+
+    canvas {
+        width: 150px !important;
+        height: 150px !important;
+    }
+}
